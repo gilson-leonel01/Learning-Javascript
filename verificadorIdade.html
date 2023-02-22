@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Idade</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <section>
+        <div>
+            <!--
+                <p>Nome completo:
+                    <input type="text" name="nome" id="name">
+                </p>
+            -->
+            <p>Ano de Nascimento:
+                <input type="number" name="ano" id="year" min="0">
+            </p>
+            <p>Sexo:
+                <input type="radio" name="sexo" id="sexoM">
+                <label for="radios">Masculino</label>
+                <input type="radio" name="sexo" id="sexoF">
+                <label for="radios">Feminino</label>
+                <input type="radio" name="sexo" id="sexoO" checked>
+                <label for="radios">Outro</label>
+            </p>
+            <!--
+                <p>Estado civil:
+                    <input type="radio" name="estado" id="casado/a">
+                    <label for="radios">Casado/a</label>
+                    <input type="radio" name="estado" id="solteiro/a" checked>
+                    <label for="radios">Solteiro/a</label>
+                </p>
+            -->
+               <p>
+                    <input type="button" value="Verificar" onclick="verificar()">
+               </p>
+        </div>
+        <div id="result">
+        </div><br>
+        <!--
+            <div id="area"
+                onclick="clicar()" onmouseenter="entrar()" 
+                onmouseout="sair()" onmousemove="mover()" 
+                onmousedown="embaixo()" onmouseup="emcima()">
+                COR D'ÁGUA
+            </div>
+        -->
+    </section>
+    <footer>&copy; <strong>FLAMES  All rights reserved</strong></footer>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

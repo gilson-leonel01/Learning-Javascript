@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Verificação</h1>       
+    </header>
+    <section>
+        <div id="form">Nacionalidade:
+            <input type="text" id="pais">
+            <br>
+            <p>Sexo:
+                <input type="radio" name="sexo" id="sexoMa">
+                <label for="radios">Masculino</label>
+                <input type="radio" name="sexo" id="sexoFe">
+                <label for="radios">Feminino</label>
+                <input type="radio" name="sexo" id="sexoOu" checked>
+                <label for="radios">Outro</label>
+            </p>
+            <p>
+                <input type="button" id="btn" value="Verificar" onclick="verificar()">
+           </p>
+        </div>
+        <div id="foto">
+            <img id="image" src="assets/img/angola.png" alt="Meu país">
+        </div>
+    </section>
+    <footer>
+        <p><strong>&copy; 2023 FLAMES Inc. All rights reserved.</strong></p>
+    </footer>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
