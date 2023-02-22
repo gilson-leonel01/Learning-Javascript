@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body{
+        background-color: rgb(172, 27, 221);
+        font: normal 20px Arial;
+        }
+        header{
+            color: white;
+            text-align: center;
+        }
+        section{
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin: auto;
+            width: 300px;
+            box-shadow: 3px 3px 3px rgb(0, 0, 0.234);
+        }
+        div{
+            text-align: center;
+        }
+        input#num1{
+            width: 74%;
+            padding: 3px;
+            border-radius: 3px;
+            border-color: rgb(129, 126, 126);
+        }
+        input#num2{
+            border-radius: 3px;
+            border-color: rgb(129, 126, 126);
+            width: 74%;
+            padding: 3px;
+        }
+        button{
+            border-radius: 5px;
+            border-color: rgb(129, 126, 126);
+            width: 25%;
+            height: 35px;
+        }
+        footer{
+            color: white;
+            text-align: center;
+            font-family: 'Nanum Myeongjo', serif; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculadora</h1>
+    </header>
+    <section>
+        <div id="center">
+            Insira o primeiro número:<br>
+            <input type="number" id="num1"><br>
+            Insira o segundo número:<br> 
+            <input type="number" id="num2"><br><br>
+            <button onclick="somar()"><strong>+</strong></button>
+            <button onclick="subtrair()"><strong>-</strong></button>
+            <button onclick="multiplicar()"><strong>*</strong></button><br><br>
+            <button onclick="dividir()"><strong>/</strong></button>
+            <button onclick="acharPotencia()"><strong>**</strong></button>
+            <button onclick="acharResto()"><strong>%</strong></button><br><br>
+            Resultado da operação: <span></span>
+        </div>
+    </section> <br>
+    <footer>&copy; 2023 FLAMES Inc. Rights reserved</footer>
+    <script>
+        //Recebe os valores
+        var num1 = document.querySelector('#num1')
+        var num2 = document.querySelector('#num2')
+        var result = document.querySelector('span')
+
+        //Operações Matemáticas
+        function somar(){
+            result.innerText = parseInt(num1.value) + parseInt(num2.value)
+        }
+        function subtrair(){
+            result.innerText = parseInt(num1.value) - parseInt(num2.value)
+        }
+        function multiplicar(){
+            result.innerText = parseInt(num1.value) * parseInt(num2.value)
+        }
+        function dividir(){
+            result.innerText = parseInt(num1.value) / parseInt(num2.value)
+        }
+        function acharPotencia(){
+            result.innerText = parseInt(num1.value) ** parseInt(num2.value)
+        }
+        function acharResto(){
+            result.innerText = parseInt(num1.value) % parseInt(num2.value)
+        }
+    </script>
+</body>
+</html>

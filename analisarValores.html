@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisar números</title>
+</head>
+<body>
+    <style>
+        /* START CSS DOCUMENT */
+        body{
+            background-color: rgb(71, 62, 204);
+            font: normal 15pt Arial;
+        }
+        header{
+            color: white;
+            text-align: center;
+        }
+        section{
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin: auto;
+            width: 400px;
+            box-shadow: 3px 3px 3px rgb(0, 0, 0.234);
+        }
+        div{
+            text-align: center;
+            padding: 8px;
+            font-size: 15pt;
+            font-family: '#';
+        }
+        footer{
+            color: white;
+            text-align: center;
+            font-family: 'Nanum Myeongjo', serif; 
+        }
+        /* END CSS DOCUMENT */
+    </style>
+    <!-- START HTML DOCUMENT -->
+</head>
+<body>
+    <header>
+        <h1>Análise de valores</h1>
+    </header>
+    <section>
+        <div id="form">
+            <p>
+                Número: <input type="number" name="num" id="number">
+                <input type="button" value="Inserir" onclick="insert()">
+            </p>
+        </div>
+        <div>
+            <select name="arrayList" id="list" size="6">
+            </select><br>
+            <input type="button" value="Analisar" onclick="analyze()">
+        </div>
+        <div id="result"></div>
+    </section>
+    <footer>
+        <p>&copy; 2023 FLAMES Inc. Rights reserved</p>
+    </footer>
+        <!-- END HTML DOCUMENT -->
+    <script>
+        // JAVASCRIPT DOCUMENT 
+        let num = document.querySelector('input#number')
+        let list = document.querySelector('select#list')
+        let result = document.querySelector('div#result')
+        let values = []
+
+        function isNumber(n){
+            if(Number(n)>= 1 && Number(n) <= 100){
+                return true
+            }else{
+                return false
+            }
+        }
+
+        function isList(n, lis){
+            if(lis.indexOf(Number(n)) != -1){
+                return true
+            }else{
+                return false
+            }
+        }
+        
+        function insert(){
+            if(isNumber(num.value) && !isList(num.value, values)){
+                values.push(Number(num.value))
+                let item = document.createElement('option')
+                item.text = `Valor ${num.value} adicionado.`
+                list.appendChild(item)
+                result.innerHTML = ''
+            }else{
+                window.alert('Valor inválido ou já existente na lista')
+            }
+            num.value = ''
+            num.focus()
+        }
+
+        function analyze(){
+            if(values.length == 0){
+                window.alert('Insira o valor antes de analisar')
+            }else{
+                let total = values.length
+                let bigger = values[0]
+                let smaller = values[0]
+                for(let pos in values){
+                        if(values[pos] > bigger)
+                            bigger = values[pos]
+                        if(values[pos] < smaller)
+                            smaller = values[pos]
+                }
+                result.innerHTML = ''
+                result.innerHTML += `<p>Total de números inseridos: ${total}</p>`
+                result.innerHTML += `<p>O maior número inserido é: ${bigger}</p>`
+                result.innerHTML += `<p>O menor número inserido é: ${smaller}</p>`
+            }
+        }
+        // END JAVASCRIPT DOCUMENT 
+    </script>
+</body>
+</html>

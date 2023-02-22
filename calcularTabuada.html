@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        body{
+            background-color: rgb(68, 52, 52);
+            font: normal 15pt Arial;
+        }
+        header{
+            color: white;
+            text-align: center;
+        }
+        section{
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin: auto;
+            width: 400px;
+            box-shadow: 3px 3px 3px rgb(0, 0, 0.234);
+        }
+        div{
+            text-align: center;
+            padding: 8px;
+            font-size: 15pt;
+            font-family: '#';
+        }
+        footer{
+            color: white;
+            text-align: center;
+            font-family: 'Nanum Myeongjo', serif; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+    <section>
+        <div id="number">
+            <p>
+                Número: <input type="number" name="num" id="txtn">
+                <input type="button" value="Gerar Tabuada" onclick="gerarTabuada()">
+            </p>
+        </div>
+        <div>
+            <select name="tabuada" id="result" size="12">
+                <option value="dig">Digite um número acima</option>
+            </select>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 FLAMES Inc. Rights reserved</p>
+    </footer>
+    <script>
+        function gerarTabuada(){
+            let num = document.getElementById('txtn')
+            let result = document.getElementById('result')
+            result.innerHTML = " "
+            
+            if(num.value.length == 0){
+                window.alert('Por favor, insira um número.')
+            }else{
+                let n = Number(num.value)
+                let i = 1
+                for(i = 0; i <= 12; i++){
+                    let item = document.createElement('option')
+                    item.text = `${n} x ${i} = ${n*i}`
+                    item.value = `result${i}`
+                    result.appendChild(item)
+                }
+            }
+        }
+    </script>
+</body>
+</html>
